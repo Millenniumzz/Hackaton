@@ -6,7 +6,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	_ "modernc.org/sqlite" // ใช้ modernc.org/sqlite แทน go-sqlite3
+	_ "modernc.org/sqlite"
 )
 
 func main() {
@@ -17,7 +17,6 @@ func main() {
 	}
 	defer db.Close()
 
-	// สร้าง table users ถ้ายังไม่มี
 	_, err = db.Exec(`CREATE TABLE IF NOT EXISTS users (
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
 		username TEXT,
@@ -29,9 +28,8 @@ func main() {
 	}
 
 	r := gin.Default()
-	r.Use(corsMiddleware()) // เปิด CORS
+	r.Use(corsMiddleware())
 
-	// API สำหรับ register
 	r.POST("/register", func(c *gin.Context) {
 		var user struct {
 			Username string `json:"username"`
@@ -43,7 +41,6 @@ func main() {
 			return
 		}
 
-		// บันทึกลง database
 		_, err := db.Exec("INSERT INTO users (username, email, password) VALUES (?, ?, ?)",
 			user.Username, user.Email, user.Password)
 		if err != nil {
@@ -81,7 +78,6 @@ func main() {
 	r.Run(":8080")
 }
 
-// Middleware เปิด CORS ให้ frontend เรียก API ได้
 func corsMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")

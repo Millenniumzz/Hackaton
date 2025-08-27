@@ -15,7 +15,7 @@ import (
 )
 
 func main() {
-	db, err := sql.Open("sqlite", "./database.db")
+	db, err := sql.Open("sqlite", "./db/database.db")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -33,6 +33,7 @@ func main() {
 	}
 
 	app := fiber.New()
+
 	app.Use(logger.New())
 	app.Use(cors.New(cors.Config{
 		AllowOrigins: "*",

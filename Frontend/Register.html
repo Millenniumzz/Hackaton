@@ -19,6 +19,8 @@
             colors: {
               cream: "#F4F1E8",
               redbrown: "#986141",
+              lightblue: "#7AADDB",
+              black: "#100F0D",
             },
           },
         },
@@ -33,14 +35,19 @@
       background-position: center;
     "
   >
-    <div
-      class="w-full max-w-sm mx-auto p-12 rounded-xl shadow-2xl shadow-black/60 bg-cream border-redbrown border-2"
-    >
-      <h2 class="text-3xl font-bold mb-6 text-center text-redbrown">
+  <!-- Equarium Logo-->
+   <div class="absolute top-8 left-8 flex items-center space-x-3 z-10">
+        <img src="../image/staralone.png" alt="Logo" class="w-12 h-12" />
+        <a href="Home.html" class="text-3xl font-bold italic text-black">Equarium</a>
+    </div>
+
+    <div  class="w-full max-w-sm mx-auto p-12 rounded-xl shadow-2xl shadow-[4px_4px_8px_rgba(0,0,0,0.25)] w-80 bg-cream border-redbrown border-2">
+      <!-- Register Form-->
+      <h2 class="text-4xl font-bold italic mb-6 text-center text-redbrown">
         Register
       </h2>
       <form id="registerForm">
-        <div class="mb-6">
+        <div class="mb-4">
           <label class="block mb-1 font-bold text-redbrown" for="username"
             >Username</label
           >
@@ -91,7 +98,7 @@
           />
         </div>
         <button
-          class="w-full bg-blue-600 text-white py-2 rounded-xl hover:bg-blue-700 font-bold text-xl"
+          class="w-full bg-lightblue text-white py-2 rounded-xl hover:bg-blue-600 font-bold text-xl"
           type="submit"
         >
           Sign Up
@@ -100,6 +107,6 @@
       </form>
     </div>
 
-    <script src="register.js"></script>
+    <script src="../src/js/register.js "></script>
   </body>
 </html>

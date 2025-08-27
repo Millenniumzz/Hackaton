@@ -106,7 +106,7 @@ func handleRegister(c *fiber.Ctx, db *sql.DB) error {
 
 func handleLogin(c *fiber.Ctx, db *sql.DB) error {
 	var req struct {
-		Email    string `json:"email"`
+		Username string `json:"username"`
 		Password string `json:"password"`
 	}
 	if err := c.BodyParser(&req); err != nil {
@@ -114,10 +114,10 @@ func handleLogin(c *fiber.Ctx, db *sql.DB) error {
 	}
 
 	var user User
-	err := db.QueryRow("SELECT id, username, email, password, role FROM users WHERE email = ?", req.Email).
+	err := db.QueryRow("SELECT id, username, email, password, role FROM users WHERE username = ?", req.Username).
 		Scan(&user.ID, &user.Username, &user.Email, &user.Password, &user.Role)
 	if err != nil {
-		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": "Email not found"})
+		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": "Username not found"})
 	}
 
 	if err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(req.Password)); err != nil {

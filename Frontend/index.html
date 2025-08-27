@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .saturn {
+            position: relative;
+            width: 150px;
+            height: 150px;
+        }
+
+        /* ดาวเคราะห์ */
+        .planet {
+            width: 100px;
+            height: 100px;
+            background: #f5d67a;
+            border-radius: 50%;
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            z-index: 2;
+        }
+
+        /* วงแหวนด้านบน (อยู่หลังดาว) */
+        .ring.top {
+            width: 150px;
+            height: 50px;
+            border: 5px solid #c19a6b;
+            border-radius: 50%;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            transform: rotate(-17deg);
+            z-index: 3;
+            /* อยู่หลังดาว */
+            background: transparent;
+            clip-path: inset(25px 0 0 0);
+            /* ตัดครึ่งล่าง */
+        }
+
+        /* วงแหวนด้านล่าง (อยู่หน้าดาว) */
+        .ring.bottom {
+            width: 150px;
+            height: 50px;
+            border: 5px solid #c19a6b;
+            border-radius: 50%;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            transform: rotate(-17deg);
+            z-index: 1;
+            /* อยู่หน้าดาว */
+            background: transparent;
+            clip-path: inset(0 0 25px 0);
+            /* ตัดครึ่งบน */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="saturn">
+        <div class="ring top"></div>
+        <div class="planet"></div>
+        <div class="ring bottom"></div>
+    </div>
+</body>
+
+</html>

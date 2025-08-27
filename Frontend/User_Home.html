@@ -16,7 +16,7 @@
           colors: {
             cream: "#F4F1E8",
             redbrown: "#986141",
-            lightblue: "#7AADDB",
+            lightblue: "#5494CE",
             black: "#100F0D",
           }
         }
@@ -32,18 +32,23 @@
   </div>
   <!-- Profile Circle -->
   <div class="absolute top-8 right-12 z-10">
-    <div class="w-20 h-20 rounded-full border-2 border-black"></div>
+    <img src="./image/user.png" alt="user" class="w-[80px] h-[80px]"/>
   </div>
-  <!-- Main Grid -->
-  <div class="pt-40 px-64">
-    <div class="grid grid-cols-3 gap-8">
+  
+  <div class="absolute inset-0 flex flex-col items-center justify-start z-50">
+    <img src="./image/jellyfish.png" alt="jellyfish" class="w-[900px] h-[520px] pt-10" />
+  </div>
+  
+   <!-- Main Grid -->
+  <div class="pt-48 px-64">
+     <div class="grid grid-cols-3 gap-8 auto-rows-auto">
       <!-- Hello Card -->
-      <div class="col-span-2 bg-cream border-redbrown border-2 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] px-8 flex flex-col justify-start min-h-[260px]">
-        <div class="text-[5rem] font-bold italic text-redbrown">Hello</div>
-        <div class="text-[3rem] font-bold italic text-redbrown">Username</div>
+      <div class="col-span-2 bg-cream border-redbrown border-2 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] px-8 flex flex-col justify-center h-[200px] self-end">
+        <div class="text-[5rem] font-bold italic text-black">Hello</div>
+        <div class="text-[3rem] font-bold italic text-lightblue">Username</div>
       </div>
       <!-- Today Card -->
-      <div class="bg-cream border-redbrown border-2 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] p-8 min-h-[260px]">
+      <div class="bg-cream border-redbrown border-2 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] p-8 h-[300px]">
         <div class="text-4xl font-bold italic text-redbrown mb-4 text-center">TODAY</div>
         <div class="space-y-2">
           <label class="flex items-center space-x-2 text-redbrown text-3xl">

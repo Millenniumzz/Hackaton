@@ -16,7 +16,7 @@
             colors: {
               cream: "#F4F1E8",
               redbrown: "#986141",
-              lightblue: "#7AADDB",
+              black: "#100F0D",
             }
           }
         }
@@ -24,6 +24,15 @@
     </script>
   </head>
   <body class="h-full min-h-screen flex items-center justify-center font-inter" style="background-image: url('../image/bg_register_signin.jpg'); background-size: cover; background-position: center;">
+    <!-- Equarium Logo-->
+    <div class="absolute top-8 left-8 flex items-center space-x-3 z-10">
+        <img src="../image/staralone.png" alt="Logo" class="w-12 h-12" />
+        <a href="Home.html" class="text-3xl font-bold italic text-black">Equarium</a>
+    </div>
+    
+    <div class="w-full max-w-sm mx-auto p-12 rounded-xl shadow-2xl shadow-[4px_4px_8px_rgba(0,0,0,0.25)] w-80 bg-cream border-redbrown border-2">
+      <h2 class="text-4xl font-bold italic mb-8 text-center text-redbrown">Login</h2>
+      <!-- Login Form-->  
     <div class="w-full max-w-sm mx-auto p-12 rounded-xl shadow-2xl shadow-black/60 bg-cream border-redbrown border-2">
         <h2 class="text-4xl font-bold italic mb-8 text-center text-redbrown">Login</h2>
       <form id="loginForm">
@@ -55,7 +64,7 @@
         </button>
         <p id="result" class="mt-4 font-bold text-center"></p>
       </form>
-      <script src="login.js"></script>
+      <script src="../src/js/login.js"></script>
     </div>
   </body>
 </html>

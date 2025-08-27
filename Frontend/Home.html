@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              cream: "#F4F1E8",
+              redbrown: "#986141",
+              lightblue: "#7AADDB",
+              black: "#100F0D",
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="h-full min-h-screen font-inter" style="background-image: url('../image/bg_welcome.jpg'); background-size: cover; background-position: center;">
+    <!-- Equarium Logo-->
+    <div class="absolute top-8 left-8 flex items-center space-x-3 z-10">
+        <img src="../image/staralone.png" alt="Logo" class="w-12 h-12" />
+        <a href="Home.html" class="text-3xl font-bold italic text-black">Equarium</a>
+    </div>
+  
+    <div class="absolute top-8 right-8 flex flex-row space-x-2 z-10">
+    <a href="Login.html" class="w-40 text-black py-3 text-3xl font-bold text-center">Login</a>
+    <a href="Register.html" class="w-40 text-black py-3 text-3xl font-bold text-center">Register</a>
+  </div>
+  <div class="flex justify-start">
+    <div class="mt-96 ml-48 w-full max-w-2xl p-16 rounded-xl shadow-2xl shadow-[4px_4px_16px_rgba(0,0,0,0.25)] bg-cream border-redbrown border-2 flex flex-col items-center">
+      <h2 class="text-4xl font-bold italic mb-6 text-center text-redbrown">Welcome</h2>
+      <div class="text-4xl font-bold text-redbrown text-center">บลา ๆ บลา ๆ</div>
+    </div>
+  </div>
+</body>
+</html>

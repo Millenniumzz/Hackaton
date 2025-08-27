@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            cream: "#F4F1E8",
+            redbrown: "#986141",
+            lightblue: "#7AADDB",
+            black: "#100F0D",
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="h-full min-h-screen font-inter bg-cream" style="background-image: url('./image/addpink.jpg'); background-size: cover; background-position: center;">
+  <!-- Logo & Name -->
+  <div class="absolute top-8 left-8 flex items-center space-x-3 z-10">
+    <img src="./image/staralone.png" alt="Logo" class="w-12 h-12" />
+    <a href="Home.html" class="text-3xl font-bold italic text-black">Equarium</a>
+  </div>
+  <!-- Profile Circle -->
+  <div class="absolute top-8 right-12 z-10">
+    <div class="w-20 h-20 rounded-full border-2 border-black"></div>
+  </div>
+  <!-- Main Grid -->
+  <div class="pt-40 px-64">
+    <div class="grid grid-cols-3 gap-8">
+      <!-- Hello Card -->
+      <div class="col-span-2 bg-cream border-redbrown border-2 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] px-8 flex flex-col justify-start min-h-[260px]">
+        <div class="text-[5rem] font-bold italic text-redbrown">Hello</div>
+        <div class="text-[3rem] font-bold italic text-redbrown">Username</div>
+      </div>
+      <!-- Today Card -->
+      <div class="bg-cream border-redbrown border-2 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] p-8 min-h-[260px]">
+        <div class="text-4xl font-bold italic text-redbrown mb-4 text-center">TODAY</div>
+        <div class="space-y-2">
+          <label class="flex items-center space-x-2 text-redbrown text-3xl">
+            <input type="radio" name="today" class="accent-redbrown h-6 w-6" />
+            <span class="not-italic font-normal">hello</span>
+          </label>
+          <label class="flex items-center space-x-2 text-redbrown text-3xl">
+            <input type="radio" name="today" class="accent-redbrown h-6 w-6" />
+            <span class="not-italic font-normal">hello</span>
+          </label>
+          <label class="flex items-center space-x-2 text-redbrown text-3xl">
+            <input type="radio" name="today" class="accent-redbrown h-6 w-6" />
+            <span class="not-italic font-normal">hello</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <!-- Bookmark Cards -->
+    <div class="grid grid-cols-3 gap-8 mt-8">
+        <div class="bg-cream border-redbrown border-2 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] p-8 min-h-[260px] relative">
+            <img src="./image/blueflag.png" alt="Blue Flag" class="absolute top-4 right-4 w-7 h-10" />
+        </div>
+        <div class="bg-cream border-redbrown border-2 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] p-8 min-h-[260px] relative">
+            <img src="./image/redflag.png" alt="Red Flag" class="absolute top-4 right-4 w-7 h-10" />
+        </div>
+        <div class="bg-cream border-redbrown border-2 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] p-8 min-h-[260px] relative">
+            <img src="./image/grayflag.png" alt="Gray Flag" class="absolute top-4 right-4 w-7 h-10" />
+        </div>
+    </div>
+  </div>
+</body>
+</html>

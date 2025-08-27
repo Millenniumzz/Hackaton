@@ -15,7 +15,7 @@ import (
 )
 
 func main() {
-	db, err := sql.Open("sqlite", "./database.db")
+	db, err := sql.Open("sqlite", "./db/database.db")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -33,6 +33,7 @@ func main() {
 	}
 
 	app := fiber.New()
+
 	app.Use(logger.New())
 	app.Use(cors.New(cors.Config{
 		AllowOrigins: "*",
@@ -42,14 +43,17 @@ func main() {
 	// Routes
 	app.Post("/register", func(c *fiber.Ctx) error { return handlers.HandleRegister(c, db) })
 	app.Post("/login", func(c *fiber.Ctx) error { return handlers.HandleLogin(c, db) })
+	app.Get("/users", func(c *fiber.Ctx) error {
+		return handleGetUsers(c, db)
+	})
+
+	log.Println("Backend running at http://localhost:8080")
 
 	/*
 		app.Get("/users", middleware.AuthMiddleware("admin"), func(c *fiber.Ctx) error {
 			return handlers.HandleGetUsers(c, db)
 		})
 	*/
-	app.Get("/users", func(c *fiber.Ctx) error { return handlers.HandleGetUsers(c, db) })
 
-	log.Println("Server running on http://localhost:8080")
 	log.Fatal(app.Listen(":8080"))
 }

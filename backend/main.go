@@ -3,32 +3,16 @@ package main
 import (
 	"database/sql"
 	"log"
-	"strings"
-	"time"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"
-	"github.com/golang-jwt/jwt/v5"
-	"golang.org/x/crypto/bcrypt"
+
 	_ "modernc.org/sqlite"
+
+	"hackaton-backend/handlers"
+	//"hackaton-backend/middleware"
 )
-
-var jwtKey = []byte("my_secret_key")
-
-type User struct {
-	ID       int    `json:"id"`
-	Username string `json:"username"`
-	Email    string `json:"email"`
-	Password string `json:"-"`
-	Role     string `json:"role"`
-}
-
-type Claims struct {
-	ID   int    `json:"id"`
-	Role string `json:"role"`
-	jwt.RegisteredClaims
-}
 
 func main() {
 	db, err := sql.Open("sqlite", "./database.db")
@@ -55,27 +39,21 @@ func main() {
 		AllowHeaders: "Content-Type, Authorization",
 	}))
 
-	app.Post("/register", func(c *fiber.Ctx) error {
-		return handleRegister(c, db)
-	})
-
-	app.Post("/login", func(c *fiber.Ctx) error {
-		return handleLogin(c, db)
-	})
+	// Routes
+	app.Post("/register", func(c *fiber.Ctx) error { return handlers.HandleRegister(c, db) })
+	app.Post("/login", func(c *fiber.Ctx) error { return handlers.HandleLogin(c, db) })
 
 	/*
-		app.Get("/users", authMiddleware("admin"), func(c *fiber.Ctx) error {
-			return handleGetUsers(c, db)
+		app.Get("/users", middleware.AuthMiddleware("admin"), func(c *fiber.Ctx) error {
+			return handlers.HandleGetUsers(c, db)
 		})
 	*/
+	app.Get("/users", func(c *fiber.Ctx) error { return handlers.HandleGetUsers(c, db) })
 
-	app.Get("/users", func(c *fiber.Ctx) error {
-		return handleGetUsers(c, db)
-	})
-
-	log.Println("Backend running at http://localhost:8080")
+	log.Println("Server running on http://localhost:8080")
 	log.Fatal(app.Listen(":8080"))
 }
+<<<<<<< Updated upstream
 
 func handleRegister(c *fiber.Ctx, db *sql.DB) error {
 	var req struct {
@@ -180,3 +158,5 @@ func authMiddleware(requiredRole string) fiber.Handler {
 		return c.Next()
 	}
 }
+=======
+>>>>>>> Stashed changes

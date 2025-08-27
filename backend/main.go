@@ -31,7 +31,7 @@ type Claims struct {
 }
 
 func main() {
-	db, err := sql.Open("sqlite", "./database.db")
+	db, err := sql.Open("sqlite", "./db/database.db")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -49,6 +49,7 @@ func main() {
 	}
 
 	app := fiber.New()
+
 	app.Use(logger.New())
 	app.Use(cors.New(cors.Config{
 		AllowOrigins: "*",
@@ -62,12 +63,6 @@ func main() {
 	app.Post("/login", func(c *fiber.Ctx) error {
 		return handleLogin(c, db)
 	})
-
-	/*
-		app.Get("/users", authMiddleware("admin"), func(c *fiber.Ctx) error {
-			return handleGetUsers(c, db)
-		})
-	*/
 
 	app.Get("/users", func(c *fiber.Ctx) error {
 		return handleGetUsers(c, db)

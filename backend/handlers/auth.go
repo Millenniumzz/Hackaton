@@ -32,9 +32,9 @@ func HandleRegister(c *fiber.Ctx, db *sql.DB) error {
 	}
 
 	_, err := db.Exec("INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)",
-		req.Username, req.Email, string(hashedPassword), role)
+		req.Username, req.Username, string(hashedPassword), role)
 	if err != nil {
-		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "Email already exists"})
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "Username already exists"})
 	}
 
 	return c.JSON(fiber.Map{"message": "Register success"})
@@ -42,7 +42,7 @@ func HandleRegister(c *fiber.Ctx, db *sql.DB) error {
 
 func HandleLogin(c *fiber.Ctx, db *sql.DB) error {
 	var req struct {
-		Email    string `json:"email"`
+		Username string `json:"email"`
 		Password string `json:"password"`
 	}
 	if err := c.BodyParser(&req); err != nil {
@@ -50,10 +50,10 @@ func HandleLogin(c *fiber.Ctx, db *sql.DB) error {
 	}
 
 	var user models.User
-	err := db.QueryRow("SELECT id, username, email, password, role FROM users WHERE email = ?", req.Email).
+	err := db.QueryRow("SELECT id, username, email, password, role FROM users WHERE email = ?", req.Username).
 		Scan(&user.ID, &user.Username, &user.Email, &user.Password, &user.Role)
 	if err != nil {
-		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": "Email not found"})
+		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": "Username not found"})
 	}
 
 	if err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(req.Password)); err != nil {

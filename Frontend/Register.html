@@ -4,17 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              inter: ["Inter", "sans-serif"],
+              inter: ['Inter', 'sans-serif'],
             },
             colors: {
               cream: "#F4F1E8",
@@ -51,6 +48,20 @@
           <label class="block mb-1 font-bold text-redbrown" for="username"
             >Username</label
           >
+               lightblue: "#7AADDB",
+
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="h-full min-h-screen flex items-center justify-center font-inter" style="background-image: url('../image/bg_register_signin.jpg'); background-size: cover; background-position: center;">
+    <div class="w-full max-w-sm mx-auto p-12 rounded-xl shadow-2xl shadow-black/60 bg-cream border-redbrown border-2">
+      <h2 class="text-3xl font-bold italic text-center text-redbrown">Register</h2>
+      <form id="registerForm">
+        <div class="mb-4">
+          <label class="block mb-1 font-bold text-redbrown" for="username">Username</label>
           <input
             class="w-full border px-3 py-2 rounded-xl bg-white border-redbrown"
             type="text"
@@ -60,9 +71,7 @@
           />
         </div>
         <div class="mb-4">
-          <label class="block mb-1 font-bold text-redbrown" for="email"
-            >Email</label
-          >
+          <label class="block mb-1 font-bold text-redbrown" for="email">Email</label>
           <input
             class="w-full border px-3 py-2 rounded-xl bg-white border-redbrown"
             type="email"
@@ -72,9 +81,7 @@
           />
         </div>
         <div class="mb-4">
-          <label class="block mb-1 font-bold text-redbrown" for="password"
-            >Password</label
-          >
+          <label class="block mb-1 font-bold text-redbrown" for="password">Password</label>
           <input
             class="w-full border px-3 py-2 rounded-xl bg-white border-redbrown"
             type="password"
@@ -84,11 +91,7 @@
           />
         </div>
         <div class="mb-4">
-          <label
-            class="block mb-1 font-bold text-redbrown"
-            for="confirmPassword"
-            >Confirm Password</label
-          >
+          <label class="block mb-1 font-bold text-redbrown" for="confirmPassword">Confirm Password</label>
           <input
             class="w-full border px-3 py-2 rounded-xl bg-white border-redbrown"
             type="password"
@@ -106,7 +109,7 @@
         <p id="result"></p>
       </form>
     </div>
-
     <script src="../src/js/register.js"></script>
   </body>
 </html>
+

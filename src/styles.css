@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .rounded-lg {}
+  .shadow-lg {}
+  .bg-cream {}
+  .text-redbrown {}
+}

@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: go-backend
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend/src:/app/src
+      - ./backend/db:/app/db  # mount ไฟล์ SQLite
+    environment:
+      - DB_PATH=/app/db/database.db
+    depends_on: []
+
+  frontend:
+    image: node:20-alpine
+    container_name: frontend
+    working_dir: /app
+    volumes:
+      - ./frontend:/app/public
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install -g serve && serve /app/public -l 3000"
+

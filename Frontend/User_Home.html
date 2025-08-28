@@ -24,60 +24,321 @@
     }
   </script>
 </head>
-<body class="h-full min-h-screen font-inter bg-cream" style="background-image: url('./image/addpink.jpg'); background-size: cover; background-position: center;">
+<body class="h-full min-h-screen font-inter bg-cream" style="background-image: url('./image/bghome_new.png'); background-size: cover; background-position: center;">
   <!-- Logo & Name -->
   <div class="absolute top-8 left-8 flex items-center space-x-3 z-10">
     <img src="./image/staralone.png" alt="Logo" class="w-12 h-12" />
-    <a href="Home.html" class="text-3xl font-bold italic text-black">Equarium</a>
+    <a href="User_Home.html" class="text-3xl font-bold italic text-black">Equarium</a>
   </div>
   <!-- Profile Circle -->
-  <div class="absolute top-8 right-12 z-10">
-    <img src="./image/user.png" alt="user" class="w-[80px] h-[80px]"/>
+  <div id="user-profile" class="absolute top-8 right-12 z-10">
+    <a href="Profile.html" class="bg-[url(./image/user.png)] bg-cover w-[140px] h-[80px] block"></a>
   </div>
+
+    <div id="auth-buttons" class="absolute top-8 right-8 flex flex-row space-x-5 z-10">
+        <a href="Login.html" class="w-40 text-black py-3 text-3xl font-bold text-center border-black border rounded-3xl ">Login</a>
+        <a href="Register.html" class="w-40 text-black py-3 text-3xl font-bold text-center border-black border rounded-3xl ">Register</a>
+    </div>
   
-  <div class="absolute inset-0 flex flex-col items-center justify-start z-50">
+  <!--<div class="absolute inset-0 flex flex-col items-center justify-start z-50">
     <img src="./image/jellyfish.png" alt="jellyfish" class="w-[900px] h-[520px] pt-10" />
-  </div>
+  </div>-->
   
-   <!-- Main Grid -->
+
   <div class="pt-48 px-64">
-     <div class="grid grid-cols-3 gap-8 auto-rows-auto">
-      <!-- Hello Card -->
-      <div class="col-span-2 bg-cream border-redbrown border-2 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] px-8 flex flex-col justify-center h-[200px] self-end">
-        <div class="text-[5rem] font-bold italic text-black">Hello</div>
-        <div class="text-[3rem] font-bold italic text-lightblue">Username</div>
+    <div class="grid grid-cols-4 gap-8 auto-rows-auto">
+      <div id="grid" class="bg-cream border-redbrown border-2 rounded-3xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] h-[370px] flex flex-col">
+
+        <div class="relative w-full h-[200px]">
+          <div class="w-full h-full bg-cover bg-center rounded-t-3xl border-b-2 border-redbrown" style="background-image: url('./image/1.png');"></div>
+          <p class="border border-redbrown p-4 text-redbrown text-xl font-bold top-2 right-2 bg-gray-300 rounded-3xl absolute">160P</p>
+        </div>
+        <div class="p-4 flex flex-row items-start justify-between">
+          
+          <h2 class="font-bold text-2xl font-inter text-redbrown pt-3 ps-3">1</h2>
+          
+          <div class="px-3">
+            <button class="font-inter w-[70px] bg-lightblue text-white py-3 rounded-3xl hover:bg-blue-600 text-2xl font-bold" type="submit">แลก</button>
+          </div>
+        </div>
+        
+        <p class="text-redbrown mt-2 text-lg font-bold ps-6">รายละเอียดสินค้า 1</p>
       </div>
-      <!-- Today Card -->
-      <div class="bg-cream border-redbrown border-2 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] p-8 h-[300px]">
-        <div class="text-4xl font-bold italic text-redbrown mb-4 text-center">TODAY</div>
-        <div class="space-y-2">
-          <label class="flex items-center space-x-2 text-redbrown text-3xl">
-            <input type="radio" name="today" class="accent-redbrown h-6 w-6" />
-            <span class="not-italic font-normal">hello</span>
-          </label>
-          <label class="flex items-center space-x-2 text-redbrown text-3xl">
-            <input type="radio" name="today" class="accent-redbrown h-6 w-6" />
-            <span class="not-italic font-normal">hello</span>
-          </label>
-          <label class="flex items-center space-x-2 text-redbrown text-3xl">
-            <input type="radio" name="today" class="accent-redbrown h-6 w-6" />
-            <span class="not-italic font-normal">hello</span>
-          </label>
+   
+      <div id="grid" class="bg-cream border-redbrown border-2 rounded-3xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] h-[370px] flex flex-col">
+
+        <div class="relative w-full h-[200px]">
+          <div class="w-full h-full bg-cover bg-center rounded-t-3xl border-b-2 border-redbrown" style="background-image: url('./image/2.png');"></div>
+          <p class="border border-redbrown p-4 text-redbrown text-xl font-bold top-2 right-2 bg-gray-300 rounded-3xl absolute">160P</p>
         </div>
+        <div class="p-4 flex flex-row items-start justify-between">
+          
+          <h2 class="font-bold text-2xl font-inter text-redbrown pt-3 ps-3">2</h2>
+          
+          <div class="px-3">
+            <button class="font-inter w-[70px] bg-lightblue text-white py-3 rounded-3xl hover:bg-blue-600 text-2xl font-bold" type="submit">แลก</button>
+          </div>
+        </div>
+        
+        <p class="text-redbrown mt-2 text-lg font-bold ps-6">รายละเอียดสินค้า 2</p>
       </div>
-    </div>
-    <!-- Bookmark Cards -->
-    <div class="grid grid-cols-3 gap-8 mt-8">
-        <div class="bg-cream border-redbrown border-2 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] p-8 min-h-[260px] relative">
-            <img src="./image/blueflag.png" alt="Blue Flag" class="absolute top-4 right-4 w-7 h-10" />
+      <div id="grid" class="bg-cream border-redbrown border-2 rounded-3xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] h-[370px] flex flex-col">
+
+        <div class="relative w-full h-[200px]">
+          <div class="w-full h-full bg-cover bg-center rounded-t-3xl border-b-2 border-redbrown" style="background-image: url('./image/3.png');"></div>
+          <p class="border border-redbrown p-4 text-redbrown text-xl font-bold top-2 right-2 bg-gray-300 rounded-3xl absolute">160P</p>
         </div>
-        <div class="bg-cream border-redbrown border-2 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] p-8 min-h-[260px] relative">
-            <img src="./image/redflag.png" alt="Red Flag" class="absolute top-4 right-4 w-7 h-10" />
+        <div class="p-4 flex flex-row items-start justify-between">
+          
+          <h2 class="font-bold text-2xl font-inter text-redbrown pt-3 ps-3">3</h2>
+          
+          <div class="px-3">
+            <button class="font-inter w-[70px] bg-lightblue text-white py-3 rounded-3xl hover:bg-blue-600 text-2xl font-bold" type="submit">แลก</button>
+          </div>
         </div>
-        <div class="bg-cream border-redbrown border-2 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] p-8 min-h-[260px] relative">
-            <img src="./image/grayflag.png" alt="Gray Flag" class="absolute top-4 right-4 w-7 h-10" />
+        
+        <p class="text-redbrown mt-2 text-lg font-bold ps-6">รายละเอียดสินค้า 3</p>
+      </div>
+      <div id="grid" class="bg-cream border-redbrown border-2 rounded-3xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] h-[370px] flex flex-col">
+
+        <div class="relative w-full h-[200px]">
+          <div class="w-full h-full bg-cover bg-center rounded-t-3xl border-b-2 border-redbrown" style="background-image: url('./image/4.png');"></div>
+          <p class="border border-redbrown p-4 text-redbrown text-xl font-bold top-2 right-2 bg-gray-300 rounded-3xl absolute">160P</p>
         </div>
+        <div class="p-4 flex flex-row items-start justify-between">
+          
+          <h2 class="font-bold text-2xl font-inter text-redbrown pt-3 ps-3">4</h2>
+          
+          <div class="px-3">
+            <button class="font-inter w-[70px] bg-lightblue text-white py-3 rounded-3xl hover:bg-blue-600 text-2xl font-bold" type="submit">แลก</button>
+          </div>
+        </div>
+        
+        <p class="text-redbrown mt-2 text-lg font-bold ps-6">รายละเอียดสินค้า 4</p>
+      </div>
+      <div id="grid" class="bg-cream border-redbrown border-2 rounded-3xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] h-[370px] flex flex-col">
+
+        <div class="relative w-full h-[200px]">
+          <div class="w-full h-full bg-cover bg-center rounded-t-3xl border-b-2 border-redbrown" style="background-image: url('./image/5.png');"></div>
+          <p class="border border-redbrown p-4 text-redbrown text-xl font-bold top-2 right-2 bg-gray-300 rounded-3xl absolute">160P</p>
+        </div>
+        <div class="p-4 flex flex-row items-start justify-between">
+          
+          <h2 class="font-bold text-2xl font-inter text-redbrown pt-3 ps-3">5</h2>
+          
+          <div class="px-3">
+            <button class="font-inter w-[70px] bg-lightblue text-white py-3 rounded-3xl hover:bg-blue-600 text-2xl font-bold" type="submit">แลก</button>
+          </div>
+        </div>
+        
+        <p class="text-redbrown mt-2 text-lg font-bold ps-6">รายละเอียดสินค้า 5</p>
+      </div>
+      <div id="grid" class="bg-cream border-redbrown border-2 rounded-3xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] h-[370px] flex flex-col">
+
+        <div class="relative w-full h-[200px]">
+          <div class="w-full h-full bg-cover bg-center rounded-t-3xl border-b-2 border-redbrown" style="background-image: url('./image/6.png');"></div>
+          <p class="border border-redbrown p-4 text-redbrown text-xl font-bold top-2 right-2 bg-gray-300 rounded-3xl absolute">160P</p>
+        </div>
+        <div class="p-4 flex flex-row items-start justify-between">
+          
+          <h2 class="font-bold text-2xl font-inter text-redbrown pt-3 ps-3">6</h2>
+          
+          <div class="px-3">
+            <button class="font-inter w-[70px] bg-lightblue text-white py-3 rounded-3xl hover:bg-blue-600 text-2xl font-bold" type="submit">แลก</button>
+          </div>
+        </div>
+        
+        <p class="text-redbrown mt-2 text-lg font-bold ps-6">รายละเอียดสินค้า 6</p>
+      </div>
+      <div id="grid" class="bg-cream border-redbrown border-2 rounded-3xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] h-[370px] flex flex-col">
+
+        <div class="relative w-full h-[200px]">
+          <div class="w-full h-full bg-cover bg-center rounded-t-3xl border-b-2 border-redbrown" style="background-image: url('./image/7.png');"></div>
+          <p class="border border-redbrown p-4 text-redbrown text-xl font-bold top-2 right-2 bg-gray-300 rounded-3xl absolute">160P</p>
+        </div>
+        <div class="p-4 flex flex-row items-start justify-between">
+          
+          <h2 class="font-bold text-2xl font-inter text-redbrown pt-3 ps-3">7</h2>
+          
+          <div class="px-3">
+            <button class="font-inter w-[70px] bg-lightblue text-white py-3 rounded-3xl hover:bg-blue-600 text-2xl font-bold" type="submit">แลก</button>
+          </div>
+        </div>
+        
+        <p class="text-redbrown mt-2 text-lg font-bold ps-6">รายละเอียดสินค้า 7</p>
+      </div>
+      <div id="grid" class="bg-cream border-redbrown border-2 rounded-3xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] h-[370px] flex flex-col">
+
+        <div class="relative w-full h-[200px]">
+          <div class="w-full h-full bg-cover bg-center rounded-t-3xl border-b-2 border-redbrown" style="background-image: url('./image/8.png');"></div>
+          <p class="border border-redbrown p-4 text-redbrown text-xl font-bold top-2 right-2 bg-gray-300 rounded-3xl absolute">160P</p>
+        </div>
+        <div class="p-4 flex flex-row items-start justify-between">
+          
+          <h2 class="font-bold text-2xl font-inter text-redbrown pt-3 ps-3">8</h2>
+          
+          <div class="px-3">
+            <button class="font-inter w-[70px] bg-lightblue text-white py-3 rounded-3xl hover:bg-blue-600 text-2xl font-bold" type="submit">แลก</button>
+          </div>
+        </div>
+        
+        <p class="text-redbrown mt-2 text-lg font-bold ps-6">รายละเอียดสินค้า 8</p>
+      </div>
+      <div id="grid" class="bg-cream border-redbrown border-2 rounded-3xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] h-[370px] flex flex-col">
+
+        <div class="relative w-full h-[200px]">
+          <div class="w-full h-full bg-cover bg-center rounded-t-3xl border-b-2 border-redbrown" style="background-image: url('./image/9.png');"></div>
+          <p class="border border-redbrown p-4 text-redbrown text-xl font-bold top-2 right-2 bg-gray-300 rounded-3xl absolute">160P</p>
+        </div>
+        <div class="p-4 flex flex-row items-start justify-between">
+          
+          <h2 class="font-bold text-2xl font-inter text-redbrown pt-3 ps-3">9</h2>
+          
+          <div class="px-3">
+            <button class="font-inter w-[70px] bg-lightblue text-white py-3 rounded-3xl hover:bg-blue-600 text-2xl font-bold" type="submit">แลก</button>
+          </div>
+        </div>
+        
+        <p class="text-redbrown mt-2 text-lg font-bold ps-6">รายละเอียดสินค้า 9</p>
+      </div>
+      <div id="grid" class="bg-cream border-redbrown border-2 rounded-3xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] h-[370px] flex flex-col">
+
+        <div class="relative w-full h-[200px]">
+          <div class="w-full h-full bg-cover bg-center rounded-t-3xl border-b-2 border-redbrown" style="background-image: url('./image/10.png');"></div>
+          <p class="border border-redbrown p-4 text-redbrown text-xl font-bold top-2 right-2 bg-gray-300 rounded-3xl absolute">160P</p>
+        </div>
+        <div class="p-4 flex flex-row items-start justify-between">
+          
+          <h2 class="font-bold text-2xl font-inter text-redbrown pt-3 ps-3">10</h2>
+          
+          <div class="px-3">
+            <button class="font-inter w-[70px] bg-lightblue text-white py-3 rounded-3xl hover:bg-blue-600 text-2xl font-bold" type="submit">แลก</button>
+          </div>
+        </div>
+        
+        <p class="text-redbrown mt-2 text-lg font-bold ps-6">รายละเอียดสินค้า 10</p>
+      </div>
+      <div id="grid" class="bg-cream border-redbrown border-2 rounded-3xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] h-[370px] flex flex-col">
+
+        <div class="relative w-full h-[200px]">
+          <div class="w-full h-full bg-cover bg-center rounded-t-3xl border-b-2 border-redbrown" style="background-image: url('./image/11.png');"></div>
+          <p class="border border-redbrown p-4 text-redbrown text-xl font-bold top-2 right-2 bg-gray-300 rounded-3xl absolute">160P</p>
+        </div>
+        <div class="p-4 flex flex-row items-start justify-between">
+          
+          <h2 class="font-bold text-2xl font-inter text-redbrown pt-3 ps-3">11</h2>
+          
+          <div class="px-3">
+            <button class="font-inter w-[70px] bg-lightblue text-white py-3 rounded-3xl hover:bg-blue-600 text-2xl font-bold" type="submit">แลก</button>
+          </div>
+        </div>
+        
+        <p class="text-redbrown mt-2 text-lg font-bold ps-6">รายละเอียดสินค้า 11</p>
+      </div>
+      <div id="grid" class="bg-cream border-redbrown border-2 rounded-3xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] h-[370px] flex flex-col">
+
+        <div class="relative w-full h-[200px]">
+          <div class="w-full h-full bg-cover bg-center rounded-t-3xl border-b-2 border-redbrown" style="background-image: url('./image/12.png');"></div>
+          <p class="border border-redbrown p-4 text-redbrown text-xl font-bold top-2 right-2 bg-gray-300 rounded-3xl absolute">160P</p>
+        </div>
+        <div class="p-4 flex flex-row items-start justify-between">
+          
+          <h2 class="font-bold text-2xl font-inter text-redbrown pt-3 ps-3">12</h2>
+          
+          <div class="px-3">
+            <button class="font-inter w-[70px] bg-lightblue text-white py-3 rounded-3xl hover:bg-blue-600 text-2xl font-bold" type="submit">แลก</button>
+          </div>
+        </div>
+        
+        <p class="text-redbrown mt-2 text-lg font-bold ps-6">รายละเอียดสินค้า 12</p>
+      </div>
+
+        
+
+
     </div>
   </div>
+  <!-- Fetch products from backend and display -->
+<!-- <script>
+const grid = document.getElementById("grid");
+grid.innerHTML = ""; // ล้างของเดิม
+
+fetch('/api/products')
+  .then(res => res.json())
+  .then(products => {
+    products.forEach(product => {
+      const card = document.createElement("div");
+      card.className = "bg-cream border-redbrown border-2 rounded-3xl shadow-[4px_4px_8px_rgba(0,0,0,0.18)] h-[370px] flex flex-col";
+
+      card.innerHTML = `
+        <div class="relative w-full h-[200px]">
+          <div class="w-full h-full bg-cover bg-center rounded-t-3xl border-b-2 border-redbrown" style="background-image: url('${product.img}');"></div>
+          <p class="border border-redbrown p-4 text-redbrown text-xl font-bold top-2 right-2 bg-gray-300 rounded-3xl absolute">${product.point}P</p>
+        </div>
+        <div class="p-4 flex flex-row items-start justify-between">
+          <h2 class="font-bold text-2xl font-inter text-redbrown pt-3 ps-3">${product.name}</h2>
+          <div class="px-3">
+            <button data-id="1" class="font-inter w-[70px] bg-lightblue text-white py-3 rounded-3xl hover:bg-blue-600 text-2xl font-bold">แลก</button>
+          </div>
+        </div>
+        <p class="text-redbrown mt-2 text-lg font-bold ps-6">${product.detail}</p>
+      `;
+
+      grid.appendChild(card);
+    });
+  })
+  .catch(err => console.error(err));
+</script>
+
+<script>
+const userId = 1; // สมมติ userId เก็บจาก token
+
+function redeemProduct(productId) {
+  fetch('/api/redeem', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ productId, userId })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if(data.success){
+      alert("แลกสำเร็จ!");
+      // อัปเดต grid หรือ point ของ user
+      location.reload(); // หรือทำ dynamic update
+    } else {
+      alert("Error: " + data.error);
+    }
+  })
+  .catch(err => console.error(err));
+}
+
+// เพิ่ม event listener ให้ปุ่มแต่ละตัว
+document.querySelectorAll(".redeem-btn").forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    const productId = btn.dataset.id; // สมมติแต่ละปุ่มมี data-id
+    redeemProduct(productId);
+  });
+});
+</script> -->
+
+  <script>
+    // ตรวจสอบ token
+    const token = localStorage.getItem('token');
+
+    if(token) {
+      // มี token → แสดง user profile
+      document.getElementById('auth-buttons').classList.add('hidden');
+      document.getElementById('user-profile').classList.remove('hidden');
+      
+      // คุณสามารถส่ง token ไป backend ตรวจสอบ validity ได้
+      // fetch('/api/check-token', { headers: { 'Authorization': `Bearer ${token}` } })
+    } else {
+      // ไม่มี token → แสดง login/register
+      document.getElementById('auth-buttons').classList.remove('hidden');
+      document.getElementById('user-profile').classList.add('hidden');
+    }
+  </script>
 </body>
 </html>

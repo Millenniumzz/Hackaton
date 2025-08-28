@@ -27,7 +27,7 @@
   <body
     class="h-full min-h-screen flex items-center justify-center font-inter"
     style="
-      background-image: url('./image/bg_register_signin.jpg');
+      background-image: url('./image/bgnormal.jpg');
       background-size: cover;
       background-position: center;
     "
@@ -35,23 +35,74 @@
   <!-- Equarium Logo-->
     <div class="absolute top-8 left-8 flex items-center space-x-3 z-10">
         <img src="./image/staralone.png" alt="Logo" class="w-12 h-12" />
-        <a href="Home.html" class="text-3xl font-bold italic text-black">Equarium</a>
+        <a href="User_Home.html" class="text-3xl font-bold italic text-black">Equarium</a>
     </div>
 
-    <div  class="w-full max-w-[594px] mx-auto p-12 rounded-xl shadow-2xl shadow-[4px_4px_8px_rgba(0,0,0,0.25)] h-[600px] bg-cream border-redbrown border-2 text-redbrown">
-
-        <div class="relative flex flex-col items-center mb-5">
-        <!-- user -->
-            <img src="./image/user.png" alt="user" class="w-[400px] h-[240px]" />
-        </div>
-        <h2 class="text-4xl font-bold italic mb-6 text-center">
-            Username
-        </h2>
-        <div class="flex items-center space-x-0 z-10 justify-center">
-            <img src="./image/iconexit.jpg" alt="exit" class="w-10 h-12 mr-1" />
+    <div class="absolute top-8 right-12 z-10 flex">
+            <img src="./image/exit.png" alt="exit" class="w-14 h-12 mr-1" />
             <div class="flex flex-col items-center space-y-2 z-10 justify-center">
-            <a href="Home.html" class="text-2xl font-bold">Logout</a></div>
+              <a href="User_Home.html" class="text-2xl font-bold text-black">Logout</a>
+            </div>
+    </div>
+    <!-- Profile Section -->  
+    <div class="w-full max-w-[700px] mx-auto mt-8 flex flex-col gap-8">
+      <div  class="w-full max-w-[700px] mx-auto p-12 rounded-xl shadow-2xl shadow-[4px_4px_8px_rgba(0,0,0,0.25)] h-[300px] bg-cream border-redbrown border-2 text-redbrown">
+
+          <div class="relative flex flex-row items-start mb-5">
+          <!-- user -->
+            <img src="./image/user.png" alt="user" class="w-[300px] h-[180px]" />
+            <div class="flex flex-col items-start ms-10 mt-5">
+              <h2 class="text-4xl font-bold italic mb-2 text-center ">
+                  Username
+              </h2>
+              <h2 class="text-2xl font-bold italic mb-6 text-center text-redbrown ">Point : 150</h2>
+            </div>  
+          </div>
+      </div>
+
+      <div class="w-full max-w-[700px] mx-auto mt-8 p-6 rounded-xl shadow-2xl shadow-[4px_4px_8px_rgba(0,0,0,0.25)] bg-cream border-redbrown border-2 text-redbrown">
+        <h2 class="text-3xl font-bold italic mb-4 text-center">History</h2>
+
+        <!-- ตัวอย่างการ์ดแต่ละรายการ -->
+        <div class="flex flex-col space-y-4 max-h-[300px] overflow-y-auto">
+          
+          <!-- Card 1 -->
+          <div class="flex justify-between items-center p-4 bg-cream shadow-md text-cream border-redbrown border-2 rounded-3xl text-redbrown">
+            <div class="flex flex-col">
+              <span class="font-bold text-xl">แลกสิทธิพิเศษ 2000P</span>
+            </div>
+            <div class="flex flex-col">
+              <button class="text-xl text-lightblue font-bold font-inter">แลก</button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="flex justify-between items-center p-4 bg-cream shadow-md text-cream border-redbrown border-2 rounded-3xl text-redbrown">
+            <div class="flex flex-col">
+              <span class="font-bold text-xl">4</span>
+              <span class="text-sm">Type: Redeem</span>
+              
+            </div >
+            <div class="flex flex-col">
+              <span class="font-bold text-lg">-30</span>
+              <span class="text-xs text-gray-400 font-inter font-bold ">2025-08-28 10:15</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="flex justify-between items-center p-4 bg-cream shadow-md text-cream border-redbrown border-2 rounded-3xl text-redbrown">
+            <div class="flex flex-col">
+              <span class="font-bold text-xl">12</span>
+              <span class="text-sm">Type: Earn</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-bold text-lg">+20</span>
+              <span class="text-xs text-gray-400 font-inter font-bold ">2025-08-28 10:15</span>
+            </div>
+          </div>
+
         </div>
+      </div>
     </div>
   </body>
 </html>

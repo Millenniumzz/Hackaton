@@ -15,9 +15,9 @@ var JwtKey = []byte("my_secret_key")
 
 func HandleRegister(c *fiber.Ctx, db *sql.DB) error {
 	var req struct {
-		Username string `json:"username"`
 		Email    string `json:"email"`
 		Password string `json:"password"`
+		Point    string `json:"point"`
 		Role     string `json:"role"`
 	}
 	if err := c.BodyParser(&req); err != nil {
@@ -26,15 +26,16 @@ func HandleRegister(c *fiber.Ctx, db *sql.DB) error {
 
 	hashedPassword, _ := bcrypt.GenerateFromPassword([]byte(req.Password), bcrypt.DefaultCost)
 
+	point := 300
 	role := "user"
 	if req.Role == "admin" {
 		role = "admin"
 	}
 
-	_, err := db.Exec("INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)",
-		req.Username, req.Email, string(hashedPassword), role)
+	_, err := db.Exec("INSERT INTO users (email, password, point, role) VALUES (?, ?, ?, ?)",
+		req.Email, string(hashedPassword), point, role)
 	if err != nil {
-		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "User already exists"})
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": err})
 	}
 
 	return c.JSON(fiber.Map{"message": "Register success"})
@@ -42,7 +43,7 @@ func HandleRegister(c *fiber.Ctx, db *sql.DB) error {
 
 func HandleLogin(c *fiber.Ctx, db *sql.DB) error {
 	var req struct {
-		Username string `json:"username"`
+		Email    string `json:"email" validate:"required,email"`
 		Password string `json:"password"`
 	}
 	if err := c.BodyParser(&req); err != nil {
@@ -50,10 +51,10 @@ func HandleLogin(c *fiber.Ctx, db *sql.DB) error {
 	}
 
 	var user models.User
-	err := db.QueryRow("SELECT id, username, email, password, role FROM users WHERE username = ?", req.Username).
-		Scan(&user.ID, &user.Username, &user.Email, &user.Password, &user.Role)
+	err := db.QueryRow("SELECT id, username, email, password, role FROM users WHERE email = ?", req.Email).
+		Scan(&user.User_id, &user.User_name, &user.Email, &user.Password, &user.Role)
 	if err != nil {
-		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": "Username not found"})
+		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": "Email not found"})
 	}
 
 	if err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(req.Password)); err != nil {
@@ -61,7 +62,7 @@ func HandleLogin(c *fiber.Ctx, db *sql.DB) error {
 	}
 
 	claims := &models.Claims{
-		ID:   user.ID,
+		ID:   user.User_id,
 		Role: user.Role,
 		RegisteredClaims: jwt.RegisteredClaims{
 			ExpiresAt: jwt.NewNumericDate(time.Now().Add(24 * time.Hour)),

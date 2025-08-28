@@ -3,15 +3,15 @@ document
   .addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    const username = document.getElementById("username").value;
+    const Email = document.getElementById("Email").value;
     const password = document.getElementById("password").value;
 
-    if (!username || !password) {
+    if (!Email || !password) {
       showResult("Please fill in all fields", "red");
       return;
     }
 
-    const data = { username: username, password: password };
+    const data = { Email: Email, password: password };
 
     try {
       const res = await fetch("http://localhost:8080/login", {

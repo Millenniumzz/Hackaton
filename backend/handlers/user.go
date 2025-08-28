@@ -17,7 +17,7 @@ func HandleGetUsers(c *fiber.Ctx, db *sql.DB) error {
 	var users []models.User
 	for rows.Next() {
 		var u models.User
-		rows.Scan(&u.ID, &u.Username, &u.Email, &u.Role)
+		rows.Scan(&u.User_id, &u.User_name, &u.Email, &u.Role)
 		users = append(users, u)
 	}
 
